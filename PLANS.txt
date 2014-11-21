@@ -1,0 +1,4 @@
+A list of plans that you may contribute to if you so wish:
+
+- Buffered Image + Rasters
+- Screen Implimentation
