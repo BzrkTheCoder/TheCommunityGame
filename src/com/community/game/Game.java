@@ -2,6 +2,7 @@ package com.bzrkthecoder.javagame;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
 
 public class Game extends Canvas implements Runnable {
@@ -39,14 +40,24 @@ public class Game extends Canvas implements Runnable {
 	
 	public void run() {
 		while(running);
-		
-		System.out.print("Running...");
+			update();
+			render();
+	}
+	
+	public void update() {
+	}
+	
+	public void render() {
+		BufferStrategy bs = getBufferStrategy();
+		if (bs == null)
+			createBufferStrategy(3);
+		return;
 	}
 	
 	public static void main(String[] args) {
 		Game game = new Game();
 		game.frame.setResizable(false);
-		game.frame.setTitle("'The Java Game'");
+		game.frame.setTitle("'The Community Game'");
 		game.frame.add(game);
 		game.frame.pack();
 		game.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
