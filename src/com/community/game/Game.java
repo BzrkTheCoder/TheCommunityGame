@@ -2,7 +2,9 @@ package com.bzrkthecoder.javagame;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+
 import javax.swing.JFrame;
 
 public class Game extends Canvas implements Runnable {
@@ -48,11 +50,19 @@ public class Game extends Canvas implements Runnable {
 	}
 	
 	public void render() {
-		BufferStrategy bs = getBufferStrategy();
-		if (bs == null)
-			createBufferStrategy(3);
+	BufferStrategy bs = getBufferStrategy();
+	if (bs == null) {
+		createBufferStrategy(3);
 		return;
 	}
+		
+		Graphics g = bs.getDrawGraphics();
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 0, getWidth(), getHeight());
+		g.dispose();
+		bs.show();
+	}
+	
 	
 	public static void main(String[] args) {
 		Game game = new Game();
