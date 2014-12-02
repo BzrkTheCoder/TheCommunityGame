@@ -1,4 +1,4 @@
-package com.bzrkthecoder.thecommunitygame;
+package com.bzrkthecoder.community.game;
 
 import java.awt.Canvas;
 import java.awt.Color;
